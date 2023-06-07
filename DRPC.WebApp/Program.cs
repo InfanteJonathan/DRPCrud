@@ -1,4 +1,7 @@
 using DRPC.DAL.DataContext;
+using DRPC.DAL.Repositories;
+using DRPC.Models;
+using DRPC.SERVICE.Service;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,6 +13,10 @@ builder.Services.AddDbContext<DrpcvirtualContext>(opt =>
 {
     opt.UseSqlServer(builder.Configuration.GetConnectionString("SQLConnection"));
 });
+
+//Trabaja directamente con usuarioRepository
+builder.Services.AddScoped<IGenRepository<Usuario>,UsuarioRepository>();
+builder.Services.AddScoped<IUsuarioService, UsuarioService>();
 
 var app = builder.Build();
 

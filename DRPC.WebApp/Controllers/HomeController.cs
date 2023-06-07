@@ -1,4 +1,5 @@
-﻿using DRPC.WebApp.Models;
+﻿using DRPC.SERVICE.Service;
+using DRPC.WebApp.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -6,11 +7,11 @@ namespace DRPC.WebApp.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+       private readonly IUsuarioService _usuarioService;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(IUsuarioService usuarioServ)
         {
-            _logger = logger;
+            _usuarioService = usuarioServ;
         }
 
         public IActionResult Index()

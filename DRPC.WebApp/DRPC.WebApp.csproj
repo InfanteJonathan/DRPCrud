@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DRPC.BLL\DRPC.BLL.csproj" />
+    <ProjectReference Include="..\DRPC.BLL\DRPC.SERVICE.csproj" />
     <ProjectReference Include="..\DRPC.Models\DRPC.Models.csproj" />
   </ItemGroup>
 
